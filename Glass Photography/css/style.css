@@ -1,0 +1,912 @@
+*, *::before ,*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #a148ff;
+    --secondary-color: #ff6f45;
+    --font-main: 'Lexend', sans-serif;
+    --font-second: sans-serif;
+    --font-color-main: #263d5a;
+    --font-color-sec: #fff;
+    --gradient-main: linear-gradient(90deg, #a148ff 0%, #ff6f45 100%);
+    --gradient-main-hover: linear-gradient(90deg, #853dd1 0%, #c25636 100%);
+    --glass-gradient: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.6) 100%);;
+    font-size: 16px;
+}
+body {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer"
+    "aside"
+    ;
+}
+header {
+    grid-area: header;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    font-family: var(--font-main);
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+header > h1 {
+    width: 20%;
+    color: var(--font-color-main);
+}
+header > nav {
+    width: 60%;
+}
+header > nav > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+header > nav > ul > li {
+    padding: 0 20px;
+}
+header > nav > ul > li > a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--font-color-main);
+}
+header > h3 {
+    width: 20%;
+    text-align: center;
+}
+header > h3 > a,
+#pricing > section > div > article > h3 > a,
+#contact > form > input[type='submit']  {
+    position: relative;
+    text-decoration: none;
+    /* display: block; */
+    padding: 14px 24px;
+    background: var(--gradient-main);
+    color: var(--font-color-sec);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: 0.4s;
+}
+header > h3 > a:hover,
+#pricing > section > div > article > h3 > a:hover,
+#main-head > article > h3 > a:hover,
+#contact > form > input[type='submit']:hover {
+    animation-name: button;
+    animation-duration: 0.7s;
+}
+@keyframes button {
+    0% {
+        box-shadow: 0 0 0 0 #ff7045;
+    }
+    100% {
+        box-shadow: 0 0 0 1.5rem #ff704500;
+    }
+}
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "main"
+    "services"
+    "about"
+    "pricing"
+    "work"
+    "progres"
+    "client"
+    "hello"
+    "map"
+    "admin"
+    "contact"
+    ;
+}
+#main-head {
+    padding: 150px 140px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background: url(../img/backmain.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+#main-head > article {
+    width: 60%;
+    height: auto;
+    padding: 100px 60px;
+    z-index: 99;
+    background: var(--glass-gradient);
+    backdrop-filter: blur(2px);
+    border-radius: 30px;
+    font-family: var(--font-main);
+    color: var(--font-color-main);
+}
+#main-head > article > h2 {
+    font-size: 4.5rem;
+}
+#main-head > article > p {
+    padding: 40px 0 60px 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+#main-head > article > h3 > a {
+    padding: 14px 30px;
+    background: var(--gradient-main);
+    text-decoration: none;
+    color: var(--font-color-sec);
+    border-radius: 30px;
+}
+#main-head > figure {
+    width: 60%;
+    height: auto;
+    margin-left: -150px;
+    z-index: 0;
+    border-radius: 30px;
+}
+#main-head > figure > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+#about,
+#services,
+#pricing,
+#work,
+#progress,
+#client,
+#hello,
+#map,
+#admin,
+#contact,
+footer,
+aside {
+    width: 100%;
+    height: auto;
+    padding: 100px 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#services {
+    grid-area: services;
+    flex-direction: column;
+    padding: 120px;
+    background: url(../img/serveback.jpg) no-repeat;
+    background-size: cover;
+}
+#services > h2 {
+    color: var(--font-color-main);
+    font-size: 3rem;
+    font-family: var(--font-main);
+    margin-bottom: 50px;
+}
+#services > section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--glass-gradient);
+    backdrop-filter: blur(4px);
+    border-radius: 30px;
+    padding: 0 20px;
+}
+#services > section > div {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#services > section > div > span {
+    display: block;
+    padding: 20px;
+    font-size: 4.5rem;
+    border-radius: 50%;
+    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.6);
+}
+#services > section > div:nth-of-type(1) > span {
+    padding: 20px 35px;
+}
+#services > section > div > article {
+    margin: 30px;
+    font-family: var(--font-main);
+    color: var(--font-color-main);
+    text-align: center;
+}
+#services > section > div > article > h2 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+#services > section > div > article > p {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+#about {
+    grid-area: about;
+    background: url(../img/aboutback.jpg);
+    background-size: cover;
+}
+
+#about > figure {
+    width: 40%;
+}
+#about > figure > img {
+    width: 100%;
+}
+#about > figure,
+#about > figure > img,
+#about > article  {
+    height: auto;
+    border-radius: 30px;
+}
+#about > article {
+    width: 60%;
+    padding: 100px 40px;
+    background: var(--glass-gradient);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    margin-left: 40px;
+    font-family: var(--font-main);
+    color: var(--font-color-main);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+#about > article > h2 {
+    font-size: 4.5rem;
+    margin-bottom: 30px;
+}
+#about > article > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#about > article > div > p {
+    font-size: 1rem;
+    line-height: 1.6;
+} 
+#about > article > div > p:nth-of-type(2) {
+    padding-left: 30px;
+}
+#pricing {
+    grid-area: pricing;
+    background: url(../img/priceback.jpg) no-repeat;
+    background-size: cover;
+    flex-direction: column;
+}
+#pricing > article {
+    width: 100%;
+    height: auto;
+    color: var(--font-color-main);
+    font-family: var(--font-main);
+    text-align: center;
+    margin-bottom: 50px;
+}
+#pricing > article > h2,
+#work > article > h2  {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+#pricing > article > p,
+#work > article > p  {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+#pricing > section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#pricing > section > div {
+    width: 30%;
+    height: auto;
+    padding: 60px 40px;
+    margin: 0 30px;
+    background: var(--glass-gradient);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: var(--font-color-main);
+    font-family: var(--font-main);
+}
+#pricing > section > div > h3 {
+    font-size: 4rem;
+}
+#pricing > section > div > article {
+    margin: 20px 0;
+}
+#pricing > section > div > article > h2 {
+    font-size: 1.5rem;
+}
+#pricing > section > div > article > p {
+    margin: 10px 0;
+    line-height: 1.4;
+    font-size: 1.1rem;
+}
+#pricing > section > div > article > h3 {
+    margin-top: 50px;
+}
+#pricing > section > div > article > h3 > a {
+    font-size: 1.2rem;
+}
+#work {
+    grid-area: work;
+    padding: 100px 20px;
+    flex-direction: column;
+    background: url(../img/workback.jpg);
+    background-size: cover;
+    font-family: var(--font-main);
+}
+#work > article {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    margin-bottom: 40px;
+    color: #333;
+}
+#work > article > p {
+    font-size: 2rem;
+    font-weight: 800;
+}
+#work > section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#work > section > div {
+    width: 33%;
+    height: 400px;
+    margin: 0 20px;
+    position: relative;
+}
+#work > section > div > figure {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+}
+#work > section > div > figure > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    transform: scale(1);
+    transition: 0.4s;
+}
+#work > section > div:hover > figure > img {
+    transform: scale(1.1);
+}
+#work > section > div > article {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.4);
+    transition: 0.4s;
+    z-index: 99;
+    display: flex;
+    justify-content: end;
+    padding: 40px;
+    flex-direction: column;
+    color: var(--font-color-sec);
+}
+#work > section > div:hover > article {
+    opacity: 1;
+} 
+#work > section > div > article > h2,
+#work > section > div > article > p {
+    padding: 5px 0;
+    transform: translateY(40px);
+    transition: 0.4s;
+}
+#work > section > div:hover > article > h2,
+#work > section > div:hover > article > p {
+    transform: translateY(0);
+}
+#progress {
+    grid-area: progres;
+    background: url(../img/progressback.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#progress > section {
+    width: 80%;
+    height: auto;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 30px;
+    background: var(--glass-gradient);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    padding: 70px;
+}
+#progress > section > article {
+    width: 100%;
+    height: auto;
+    color: var(--font-color-main);
+    font-family: var(--font-main);
+    margin-bottom: 40px;
+}
+#progress > section > article > h3,
+#progress > section > div > div > article > h2, 
+#progress > section > div > div > article > h3 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+#progress > section > article > h2 {
+    font-size: 2.8rem;
+    margin: 15px 0;
+}
+#progress > section > article > p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+} 
+#progress > section > div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#progress > section > div > div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0;
+}
+#progress > section > div > div > article {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--font-color-main);
+    font-family: var(--font-main);
+    margin-bottom: 15px;
+}
+#progress > section > div > div .outer {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background-color: white;
+    position: relative;
+}
+#progress > section > div > div .outer .inner {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    background-color: var(--primary-color);
+}
+#progress > section > div > div:nth-of-type(1) .outer .inner {
+    width: 93%;
+}
+#progress > section > div > div:nth-of-type(2) .outer .inner {
+    width: 71%;
+}
+#progress > section > div > div:nth-of-type(3) .outer .inner {
+    width: 53%;
+}
+#client {
+    grid-area: client;
+    background: url(../img/clientback.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    flex-direction: column;
+}
+#client > h2,
+#client > h3 {
+    color: var(--font-color-sec);
+    font-family: var(--font-main);
+    margin: 8px 0;
+}
+#client > h3 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+#client > h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+#client > section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#client > section > figure {
+    margin: 20px 0;
+    height: auto;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: var(--glass-gradient);
+    backdrop-filter: blur(3.5px);
+    flex-basis: 31%;
+    -webkit-backdrop-filter: blur(3.5px);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#client > section > figure > img {
+    width: 60%;
+    height: auto;
+}
+#hello {
+    grid-area: hello;
+    background: url(../img/helloback.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#hello > article {
+    width: 80%;
+    height: auto;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: var(--glass-gradient);
+    backdrop-filter: blur(2.5px);
+    padding: 70px 40px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--font-color-main);
+    font-family: var(--font-main);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+#hello > article > h3 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+#hello > article > h2 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin: 15px 0;
+} 
+#hello > article > h4 {
+    margin-top: 20px;
+}
+#hello > article > h4 > a {
+    text-decoration: none;
+    color: var(--font-color-main);
+    font-size: 1.4rem;
+    font-weight: 400;
+    position: relative;
+}
+#hello > article > h4 > a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--font-color-main);
+    transition: 0.4s;
+}
+#hello > article > h4 > a:hover::before {
+    width: 100%;
+}
+#map {
+    grid-area: map;
+    background: url(../img/serveback.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#map > div {
+    width: 80%;
+    height: 500px;
+    border-radius: 30px;
+}
+#map > div > iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    opacity: 0.7;
+    transition: 0.4s;
+}
+#map > div:hover > iframe {
+    opacity: 1;
+} 
+#admin {
+    grid-area: admin;
+    background: url(../img/workback.jpg);
+    align-items: baseline;
+    justify-content: space-around;
+}
+#admin > figure {
+    width: 33.3%;
+    height: auto;
+    border-radius: 30px;
+}
+#admin > figure > img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+}
+#admin > article {
+    width: 66.6%;
+    margin-left: 30px;
+    height: auto;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: var(--glass-gradient);
+    backdrop-filter: blur(2.5rem);
+    align-self: flex-end;
+    padding: 80px 40px;
+    color: var(--font-color-main);
+    font-family: var(--font-main);
+    border-radius: 30px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+#admin > article > p {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+#admin > article > h3 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+#contact {
+    grid-area: contact;
+    background: url(../img/progressback.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+#contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: 1;
+}
+#contact > form {
+    z-index: 2;
+    width: 85%;
+    height: auto;
+    padding: 80px 20px;
+    background: var(--glass-gradient);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border-radius: 30px;
+    border: 2px solid  rgba(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+}
+#contact > form > h2 {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-family: var(--font-main);
+    color: var(--font-color-main);
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+#contact > form > .small,
+#contact > form > textarea {
+    padding: 15px;
+    color: var(--font-color-main);
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    outline: none;
+    background: var(--glass-gradient);
+    font-family: var(--font-main);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    font-size: 1rem;
+    transition: 0.4s;
+}
+#contact > form > .small {
+    width: 45%;
+}
+#contact > form > .small:focus {
+    border: 1px solid var(--primary-color);
+}
+#contact > form > textarea {
+    width: calc(90% + 20px);
+    height: 250px;
+}
+#contact > form > textarea:focus {
+    border: 1px solid var(--secondary-color);
+}
+#contact > form > input[type='submit'] {
+    width: 90%;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-family: var(--font-main);
+}
+footer {
+    grid-area: footer;
+    background-color: var(--font-color-main);
+    color: var(--font-color-sec);
+}
+footer > article {
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-main);
+    flex-direction: column;
+}
+footer > article > h2 {
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+footer > article > p {
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 400;
+}
+aside {
+    grid-area: aside;
+    padding: 40px 100px;
+    background-color: #333;
+}
+aside > h3 {
+    color: white;
+    font-family: var(--font-main);
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+aside > h3 > span {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: underline;
+}
+@media only screen and (max-width:900px) {
+    header > nav,
+    header > h3 {
+        display: none;
+    }
+    #main-head {
+        padding: 150px 0;
+        flex-direction: column;
+    }
+    #main-head > article,
+    #main-head > figure {
+        width: 80%;
+    }
+    #main-head > article > h2 {
+        font-size: 2.5rem;
+    }
+    #main-head > figure {
+        margin-left: unset;
+        margin-top: 20px;
+    }
+    #about,
+    #services,
+    #pricing,
+    #work,
+    #progress,
+    #client,
+    #hello,
+    #map,
+    #admin,
+    #contact,
+    footer,
+    aside {
+        padding: 60px 40px;
+    }
+    #services > section {
+        flex-direction: column;
+    }
+    #about {
+        flex-direction: column;
+    }
+    #about > figure,
+    #about > article {
+        width: 100%;
+    }
+    #about > article {
+        margin-left: unset;
+        margin-top: 20px;
+    }
+    #about > article > h2 {
+        font-size: 2.5rem;
+    }
+    #about > article > div {
+        flex-direction: column;
+    }
+    #about > article > div > p:nth-of-type(2) {
+        padding-left: unset;
+    }
+    #pricing > section {
+        flex-direction: column;
+    }
+    #pricing > section > div {
+        width: 100%;
+        margin: 20px 0;
+    }
+    #work > section {
+        flex-direction: column;
+    }
+    #work > section > div {
+        width: 100%;
+        margin: 20px 0;
+    }
+    #progress > section {
+        width: 100%;
+        padding: 60px 40px;
+    }
+    #progress > section > article > h2 {
+        font-size: 2rem;
+    }
+    #client > section > figure {
+        flex-basis: 400px;
+    }
+    #hello > article {
+        width: 100%;
+    }
+    #hello > article > h2 {
+        font-size: 2.5rem;
+    }
+    #map > div {
+        width: 100%;
+    }
+    #admin {
+        flex-direction: column;
+        align-items: center;
+    }
+    #admin > figure,
+    #admin > article {
+        width: 100%;
+    }
+    #admin > article {
+        margin-top: 20px;
+    }
+    #contact > form {
+        width: 100%;
+    }
+    #contact > form > .small {
+        width: 100%;
+    }
+}
